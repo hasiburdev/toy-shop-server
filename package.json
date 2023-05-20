@@ -1,12 +1,31 @@
 {
-  "name": "toy-marketplace",
+  "name": "toy-marketplace-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --quiet",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --quiet --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,html,scss}\""
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.5.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  }
 }
