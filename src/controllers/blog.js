@@ -11,8 +11,10 @@ const getAllBlogs = async (req, res) => {
 const getBlogBySlug = async (req, res) => {
   const { slug } = req.params;
   const blogCollection = client.db().collection("blog");
+  console.log(slug);
 
-  const blog = blogCollection.findOne({ slug });
+  const blog = await blogCollection.findOne({ slug });
+  console.log(blog);
 
   res.json({ blog });
 };
